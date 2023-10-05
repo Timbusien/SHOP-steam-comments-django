@@ -18,7 +18,7 @@ class CategoryModel(models.Model):
 class ProductModel(models.Model):
     title = models.CharField(max_length=50)
     price = models.IntegerField(default=0)
-    category = models.ManyToManyField(CategoryModel, null=True, blank=True)
+    category = models.ForeignKey(CategoryModel, on_delete=models.CASCADE, null=True, blank=True)
     img = models.FileField(upload_to='item')
     favorite_by = models.ManyToManyField(User, related_name='favorite_item', blank=True)
     description = models.TextField()

@@ -1,10 +1,24 @@
 {% extends 'item/base.html' %}
 
 {% block title %}
+{{ title }}
 Главная страница
 {% endblock %}
 
 {% block content %}
     <h1>Главное Меню</h1>
-    <p>||||||||||||||||||</p>
+    {% for i in products %}
+    <div class="card" style="width: 18rem;">
+  <img src="..." class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{ el.title }}</h5>
+    <p class="card-text">{{ el.products }}</p>
+    <a href="#" class="btn btn-primary">Перейти куда-нибудь</a>
+  </div>
+</div>
+        <div class="alert alert-warning mt-2">
+            <h3>{{ el.title }}</h3>
+            <p>{{ el.products }}</p>
+        </div>
+    {% endfor %}
 {% endblock %}

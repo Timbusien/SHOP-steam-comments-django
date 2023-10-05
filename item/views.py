@@ -1,9 +1,11 @@
 from django.shortcuts import render
+from .models import CategoryModel, ProductModel
 
 # Create your views here.
 
 def index(request):
-    return render(request, 'item/index.html')
+    products = ProductModel.objects.all()
+    return render(request, 'item/index.html', {'title' : 'Главное меню', 'products' : products})
 
 
 
