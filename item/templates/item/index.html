@@ -6,19 +6,23 @@
 {% endblock %}
 
 {% block content %}
-    <h1>Главное Меню</h1>
-    {% for i in products %}
-    <div class="card" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">{{ el.title }}</h5>
-    <p class="card-text">{{ el.products }}</p>
-    <a href="#" class="btn btn-primary">Перейти куда-нибудь</a>
-  </div>
-</div>
-        <div class="alert alert-warning mt-2">
-            <h3>{{ el.title }}</h3>
-            <p>{{ el.products }}</p>
-        </div>
-    {% endfor %}
+    <h1>Товары</h1>
+    <h3>в нашем телеграмм боте</h3>
+    <img src="./item/templates/item/photos/photo_2023-10-07_01-07-21.jpg" alt="">
+
+    <h3>https://t.me/CounterStrikeCases_bot</h3>
+
+
+
+    <h1>Все отзывы</h1>
+    {% if tasks %}
+        {% for el in tasks %}
+            <div class="alert alert-warning mt-2">
+                <h3>{{ el.title }}</h3>
+                <p>{{ el.task }}</p>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>Жалоб и предложений пока нет</p>
+    {% endif %}
 {% endblock %}

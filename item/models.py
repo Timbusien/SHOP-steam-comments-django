@@ -30,3 +30,20 @@ class ProductModel(models.Model):
     class Meta:
         verbose_name = 'продукты для магазина'
         verbose_name_plural = 'добавление продуктов'
+
+
+class Task(models.Model):
+    title = models.CharField('Тема', max_length=100)
+    task = models.TextField('Содержание')
+
+
+    def __str__(self):
+        return self.title
+
+
+    class Meta:
+        verbose_name = 'Жалобы или поправки'
+        verbose_name_plural = 'Содержание жалобы'
+
+
+
