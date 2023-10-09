@@ -3,7 +3,7 @@ from django.views.generic import ListView
 from .forms import TaskForm
 
 from .models import Task
-from .models import CategoryModel, ProductModel
+# from .models import CategoryModel, ProductModel
 
 # Create your views here.
 
@@ -34,14 +34,14 @@ def create(request):
     return render(request, 'item/create.html', context)
 
 
-class Shop_Page(ListView):
-    template_name = 'item/index.html'
-    queryset = ProductModel.objects.all()
-    context_object_name = 'store'
-
-
-    def get_context_data(self, *, object_list=None, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['category'] = CategoryModel.objects.all()
-
-        return context
+# class Shop_Page(ListView):
+#     template_name = 'item/index.html'
+#     queryset = ProductModel.objects.all()
+#     context_object_name = 'store'
+#
+#
+#     def get_context_data(self, *, object_list=None, **kwargs):
+#         context = super().get_context_data(**kwargs)
+#         context['category'] = CategoryModel.objects.all()
+#
+#         return context
