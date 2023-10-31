@@ -15,9 +15,11 @@
       </a>
 
       <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
-        <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="{% url 'homepage' %}">Главное меню</a>
-        <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="{% url 'about' %}">О нашем сайте</a>
-        <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="{% url 'create' %}">Добавить комментарий</a>
+        <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="{% url 'item:homepage' %}">Главное меню</a>
+        <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="{% url 'item:about' %}">О нашем сайте</a>
+        <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="{% url 'item:create' %}">Добавить комментарий</a>
+
+
       </nav>
     </div>
     <div class="container">
