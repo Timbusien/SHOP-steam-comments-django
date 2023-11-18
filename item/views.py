@@ -14,12 +14,12 @@ def register_request(request):
         form = NewUserForm(request.POST)
         if form.is_valid():
             user = form.save()
-            login(request, user)
+            print(user)
             messages.success(request, "Registration successful.")
-            return redirect("item:homepage")
+            return redirect("item:login")
         messages.error(request, "Unsuccessful registration. Invalid information.")
     form = NewUserForm()
-    return render(request=request, template_name="item/register.html", context={"register_form": form})
+    return render(request=request, template_name="item/register.html", context={"register_form":form})
 
 
 def login_request(request):
@@ -63,7 +63,7 @@ def create(request):
         form = TaskForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('homepage')
+            return redirect('item:homepage')
         else:
             error = 'неверный коментарий'
     form = TaskForm()
